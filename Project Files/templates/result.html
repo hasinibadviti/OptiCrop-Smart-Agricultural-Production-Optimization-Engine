@@ -1,0 +1,71 @@
+{% extends "base.html" %}
+
+{% block title %}OptiCrop | Result{% endblock %}
+
+{% block content %}
+<section class="oc-section">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="card oc-result-card text-center">
+                    <div class="card-body">
+                        <i class="fa-solid fa-circle-check oc-success-icon"></i>
+                        <h2 class="oc-result-heading">Prediction Successful</h2>
+                        <p class="oc-result-subtext">Based on your input, the recommended crop is:</p>
+
+                        <div class="oc-crop-badge">
+                            <i class="fa-solid fa-seedling me-2"></i>{{ predicted_crop }}
+                        </div>
+
+                        <h3 class="oc-table-heading"><i class="fa-solid fa-table-list me-2"></i>Submitted Field Data</h3>
+                        <div class="table-responsive">
+                            <table class="table table-hover oc-table">
+                                <thead>
+                                    <tr>
+                                        <th>Parameter</th>
+                                        <th>Value</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Nitrogen (N)</td>
+                                        <td>{{ input_data.N }}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Phosphorous (P)</td>
+                                        <td>{{ input_data.P }}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Potassium (K)</td>
+                                        <td>{{ input_data.K }}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Temperature (&deg;C)</td>
+                                        <td>{{ input_data.temperature }}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Humidity (%)</td>
+                                        <td>{{ input_data.humidity }}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Soil pH</td>
+                                        <td>{{ input_data.ph }}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Rainfall (mm)</td>
+                                        <td>{{ input_data.rainfall }}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <a href="{{ url_for('main_bp.index') }}" class="btn oc-btn-predict mt-3">
+                            <i class="fa-solid fa-rotate-left me-2"></i>Predict Again
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

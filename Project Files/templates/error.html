@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block title %}OptiCrop | Error{% endblock %}
+
+{% block content %}
+<section class="oc-section">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-7">
+                <div class="alert alert-danger oc-alert text-center" role="alert">
+                    <i class="fa-solid fa-triangle-exclamation oc-error-icon"></i>
+                    <h3 class="mt-3">Something Went Wrong</h3>
+                    <p class="mb-4">{{ error_message }}</p>
+                    <a href="{{ url_for('main_bp.index') }}" class="btn oc-btn-predict">
+                        <i class="fa-solid fa-house me-2"></i>Back to Home
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

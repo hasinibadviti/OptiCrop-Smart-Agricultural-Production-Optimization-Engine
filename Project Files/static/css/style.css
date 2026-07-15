@@ -1,0 +1,340 @@
+/* =========================================================
+   OptiCrop — Global Styles
+   Palette: Deep Forest #1B4332 | Leaf #2D6A4F | Sage #74C69D
+            Soil Tan #D4A373 | Mist #F4F7F5 | White #FFFFFF
+   Fonts: Fraunces (display) / Inter (body)
+   ========================================================= */
+
+:root {
+    --oc-forest: #1B4332;
+    --oc-leaf: #2D6A4F;
+    --oc-sage: #74C69D;
+    --oc-tan: #D4A373;
+    --oc-mist: #F4F7F5;
+    --oc-white: #FFFFFF;
+    --oc-gray: #6C757D;
+    --oc-shadow: 0 10px 30px rgba(27, 67, 50, 0.10);
+    --oc-shadow-hover: 0 16px 40px rgba(27, 67, 50, 0.16);
+    --oc-radius: 16px;
+    --oc-transition: all 0.25s ease-in-out;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--oc-mist);
+    color: #263A32;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.oc-main {
+    flex: 1;
+}
+
+h1, h2, h3, .oc-brand {
+    font-family: 'Fraunces', serif;
+}
+
+/* ---------------- Navbar ---------------- */
+.oc-navbar {
+    background-color: var(--oc-white);
+    box-shadow: 0 2px 12px rgba(27, 67, 50, 0.08);
+    padding: 0.85rem 0;
+}
+
+.oc-brand {
+    color: var(--oc-forest) !important;
+    font-weight: 700;
+    font-size: 1.5rem;
+}
+
+.oc-navbar .nav-link {
+    color: var(--oc-forest);
+    font-weight: 500;
+    margin-left: 0.5rem;
+    transition: var(--oc-transition);
+    border-radius: 8px;
+    padding: 0.4rem 0.9rem !important;
+}
+
+.oc-navbar .nav-link:hover {
+    background-color: var(--oc-mist);
+    color: var(--oc-leaf);
+}
+
+/* ---------------- Hero ---------------- */
+.oc-hero {
+    position: relative;
+    overflow: hidden;
+    padding: 4.5rem 0 5rem;
+    background: linear-gradient(180deg, #EAF3EC 0%, var(--oc-mist) 100%);
+}
+
+.oc-hero-rows {
+    position: absolute;
+    inset: 0;
+    background: repeating-linear-gradient(
+        180deg,
+        rgba(45, 106, 79, 0.05) 0px,
+        rgba(45, 106, 79, 0.05) 2px,
+        transparent 2px,
+        transparent 28px
+    );
+    pointer-events: none;
+}
+
+.oc-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    background-color: rgba(116, 198, 157, 0.18);
+    color: var(--oc-leaf);
+    font-weight: 600;
+    font-size: 0.85rem;
+    padding: 0.4rem 0.9rem;
+    border-radius: 999px;
+    margin-bottom: 1.25rem;
+}
+
+.oc-hero-title {
+    font-size: 2.6rem;
+    font-weight: 700;
+    color: var(--oc-forest);
+    line-height: 1.2;
+    margin-bottom: 1.1rem;
+}
+
+.oc-hero-text {
+    color: #45564D;
+    font-size: 1.05rem;
+    line-height: 1.7;
+    margin-bottom: 1.75rem;
+}
+
+.oc-hero-stats {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.oc-stat {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background-color: var(--oc-white);
+    border-radius: 12px;
+    padding: 0.7rem 1.1rem;
+    box-shadow: var(--oc-shadow);
+    font-weight: 600;
+    color: var(--oc-leaf);
+    font-size: 0.9rem;
+}
+
+.oc-stat i {
+    color: var(--oc-tan);
+}
+
+/* ---------------- Cards ---------------- */
+.card {
+    border: none;
+    border-radius: var(--oc-radius);
+}
+
+.oc-form-card {
+    box-shadow: var(--oc-shadow-hover);
+    border-top: 5px solid var(--oc-sage);
+}
+
+.oc-form-heading {
+    color: var(--oc-forest);
+    font-weight: 600;
+    font-size: 1.5rem;
+}
+
+.oc-form-subtext {
+    color: var(--oc-gray);
+    margin-bottom: 1.25rem;
+}
+
+/* ---------------- Forms ---------------- */
+.form-label {
+    font-weight: 600;
+    color: var(--oc-forest);
+    font-size: 0.9rem;
+}
+
+.oc-input {
+    border: 1.5px solid #DCE6DF;
+    border-radius: 10px;
+    padding: 0.6rem 0.85rem;
+    transition: var(--oc-transition);
+}
+
+.oc-input:focus {
+    border-color: var(--oc-sage);
+    box-shadow: 0 0 0 0.2rem rgba(116, 198, 157, 0.25);
+    outline: none;
+}
+
+/* ---------------- Buttons ---------------- */
+.oc-btn-predict {
+    background-color: var(--oc-leaf);
+    color: var(--oc-white);
+    font-weight: 600;
+    border-radius: 10px;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    transition: var(--oc-transition);
+}
+
+.oc-btn-predict:hover {
+    background-color: var(--oc-forest);
+    color: var(--oc-white);
+    transform: translateY(-2px);
+    box-shadow: var(--oc-shadow-hover);
+}
+
+/* ---------------- Sections ---------------- */
+.oc-section {
+    padding: 4rem 0;
+}
+
+/* ---------------- Result Page ---------------- */
+.oc-result-card {
+    box-shadow: var(--oc-shadow-hover);
+    padding: 1.5rem;
+    border-top: 5px solid var(--oc-leaf);
+}
+
+.oc-success-icon {
+    font-size: 3.5rem;
+    color: var(--oc-sage);
+    margin-bottom: 1rem;
+}
+
+.oc-result-heading {
+    color: var(--oc-forest);
+    font-weight: 700;
+}
+
+.oc-result-subtext {
+    color: var(--oc-gray);
+}
+
+.oc-crop-badge {
+    display: inline-flex;
+    align-items: center;
+    background-color: rgba(45, 106, 79, 0.1);
+    color: var(--oc-forest);
+    font-size: 1.6rem;
+    font-weight: 700;
+    padding: 0.75rem 1.75rem;
+    border-radius: 999px;
+    margin: 1rem 0 2rem;
+    text-transform: capitalize;
+}
+
+.oc-table-heading {
+    color: var(--oc-forest);
+    font-weight: 600;
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    text-align: left;
+}
+
+.oc-table thead {
+    background-color: var(--oc-leaf);
+    color: var(--oc-white);
+}
+
+.oc-table th, .oc-table td {
+    padding: 0.75rem 1rem;
+}
+
+.oc-table tbody tr:hover {
+    background-color: var(--oc-mist);
+}
+
+/* ---------------- About Page ---------------- */
+.oc-about-card {
+    box-shadow: var(--oc-shadow);
+    transition: var(--oc-transition);
+}
+
+.oc-about-card:hover {
+    box-shadow: var(--oc-shadow-hover);
+    transform: translateY(-3px);
+}
+
+.oc-about-heading {
+    color: var(--oc-forest);
+    font-weight: 600;
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+}
+
+.oc-list {
+    padding-left: 1.25rem;
+    line-height: 1.9;
+    color: #3C4C43;
+}
+
+.oc-list-ordered li::marker {
+    color: var(--oc-leaf);
+    font-weight: 700;
+}
+
+.oc-tech-grid > div {
+    font-weight: 600;
+    color: var(--oc-forest);
+    background-color: var(--oc-mist);
+    border-radius: 10px;
+    padding: 0.65rem 0.9rem;
+}
+
+/* ---------------- Error Page ---------------- */
+.oc-alert {
+    background-color: var(--oc-white);
+    border: 1px solid rgba(220, 53, 69, 0.25);
+    border-radius: var(--oc-radius);
+    box-shadow: var(--oc-shadow);
+    padding: 2.5rem 1.5rem;
+    color: #7A3B3B;
+}
+
+.oc-error-icon {
+    font-size: 3rem;
+    color: #D9534F;
+}
+
+/* ---------------- Footer ---------------- */
+.oc-footer {
+    background-color: var(--oc-forest);
+    color: rgba(255, 255, 255, 0.85);
+    padding: 1.25rem 0;
+    font-size: 0.9rem;
+}
+
+/* ---------------- Responsive ---------------- */
+@media (max-width: 991px) {
+    .oc-hero-title {
+        font-size: 2.1rem;
+    }
+    .oc-form-card {
+        margin-top: 2.5rem;
+    }
+}
+
+@media (max-width: 575px) {
+    .oc-crop-badge {
+        font-size: 1.25rem;
+        padding: 0.6rem 1.25rem;
+    }
+    .oc-hero-title {
+        font-size: 1.8rem;
+    }
+}

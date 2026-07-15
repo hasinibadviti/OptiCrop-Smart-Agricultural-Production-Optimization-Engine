@@ -1,0 +1,79 @@
+{% extends "base.html" %}
+
+{% block title %}OptiCrop | About{% endblock %}
+
+{% block content %}
+<section class="oc-section">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-9">
+
+                <div class="card oc-about-card mb-4">
+                    <div class="card-body">
+                        <h2 class="oc-about-heading"><i class="fa-solid fa-book-open me-2"></i>Project Overview</h2>
+                        <p>
+                            OptiCrop is a Smart Agricultural Production Optimization Engine that helps
+                            farmers and agronomists choose the most suitable crop for a given plot of land.
+                            By combining soil nutrient levels with climate conditions, the system applies
+                            a trained machine learning classifier to recommend the crop most likely to
+                            thrive under those exact conditions.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="card oc-about-card mb-4">
+                    <div class="card-body">
+                        <h2 class="oc-about-heading"><i class="fa-solid fa-bullseye me-2"></i>Objectives</h2>
+                        <ul class="oc-list">
+                            <li>Analyze soil and environmental parameters to guide crop selection.</li>
+                            <li>Compare multiple machine learning algorithms and select the best performer.</li>
+                            <li>Deliver predictions through a simple, accessible web interface.</li>
+                            <li>Support better agricultural planning and improved yield outcomes.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="card oc-about-card mb-4">
+                    <div class="card-body">
+                        <h2 class="oc-about-heading"><i class="fa-solid fa-layer-group me-2"></i>Technologies Used</h2>
+                        <div class="row g-3 oc-tech-grid">
+                            <div class="col-6 col-md-4"><i class="fa-brands fa-python me-2"></i>Python</div>
+                            <div class="col-6 col-md-4"><i class="fa-solid fa-flask me-2"></i>Flask</div>
+                            <div class="col-6 col-md-4"><i class="fa-solid fa-diagram-project me-2"></i>Scikit-learn</div>
+                            <div class="col-6 col-md-4"><i class="fa-solid fa-table me-2"></i>Pandas</div>
+                            <div class="col-6 col-md-4"><i class="fa-solid fa-square-root-variable me-2"></i>NumPy</div>
+                            <div class="col-6 col-md-4"><i class="fa-brands fa-bootstrap me-2"></i>Bootstrap</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card oc-about-card mb-4">
+                    <div class="card-body">
+                        <h2 class="oc-about-heading"><i class="fa-solid fa-gears me-2"></i>Machine Learning Workflow</h2>
+                        <ol class="oc-list oc-list-ordered">
+                            <li>Clean and preprocess the crop recommendation dataset.</li>
+                            <li>Split data into training and testing sets, then scale features.</li>
+                            <li>Train Logistic Regression, KNN, Decision Tree, and Random Forest models.</li>
+                            <li>Compare model accuracies and automatically select the best model.</li>
+                            <li>Persist the model and scaler using joblib for real-time prediction.</li>
+                        </ol>
+                    </div>
+                </div>
+
+                <div class="card oc-about-card">
+                    <div class="card-body">
+                        <h2 class="oc-about-heading"><i class="fa-solid fa-rocket me-2"></i>Future Enhancements</h2>
+                        <ul class="oc-list">
+                            <li>Live weather API integration for automatic climate data.</li>
+                            <li>Fertilizer recommendation and yield estimation modules.</li>
+                            <li>Regional language support for wider farmer accessibility.</li>
+                            <li>Cloud deployment with a mobile companion application.</li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

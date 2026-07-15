@@ -1,0 +1,80 @@
+{% extends "base.html" %}
+
+{% block title %}OptiCrop | Home{% endblock %}
+
+{% block content %}
+<section class="oc-hero">
+    <div class="oc-hero-rows"></div>
+    <div class="container position-relative">
+        <div class="row align-items-center">
+            <div class="col-lg-6">
+                <span class="oc-eyebrow"><i class="fa-solid fa-leaf me-2"></i>AI-Powered Crop Intelligence</span>
+                <h1 class="oc-hero-title">Grow the right crop, right from the start.</h1>
+                <p class="oc-hero-text">
+                    OptiCrop analyzes your soil nutrients and local climate conditions —
+                    Nitrogen, Phosphorous, Potassium, temperature, humidity, pH, and rainfall —
+                    to recommend the single best crop for your field using a trained
+                    machine learning model.
+                </p>
+                <div class="oc-hero-stats">
+                    <div class="oc-stat">
+                        <i class="fa-solid fa-flask"></i>
+                        <span>7 Soil &amp; Climate Inputs</span>
+                    </div>
+                    <div class="oc-stat">
+                        <i class="fa-solid fa-brain"></i>
+                        <span>ML-Selected Best Model</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="card oc-form-card">
+                    <div class="card-body">
+                        <h2 class="oc-form-heading">
+                            <i class="fa-solid fa-sliders me-2"></i>Enter Field Data
+                        </h2>
+                        <p class="oc-form-subtext">Fill in your soil and weather readings below.</p>
+
+                        <form id="cropForm" action="{{ url_for('main_bp.predict') }}" method="POST" novalidate>
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <label for="N" class="form-label">Nitrogen (N)</label>
+                                    <input type="number" step="any" min="0" class="form-control oc-input" id="N" name="N" placeholder="e.g. 90" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="P" class="form-label">Phosphorous (P)</label>
+                                    <input type="number" step="any" min="0" class="form-control oc-input" id="P" name="P" placeholder="e.g. 42" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="K" class="form-label">Potassium (K)</label>
+                                    <input type="number" step="any" min="0" class="form-control oc-input" id="K" name="K" placeholder="e.g. 43" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="temperature" class="form-label">Temperature (&deg;C)</label>
+                                    <input type="number" step="any" class="form-control oc-input" id="temperature" name="temperature" placeholder="e.g. 25.6" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="humidity" class="form-label">Humidity (%)</label>
+                                    <input type="number" step="any" min="0" max="100" class="form-control oc-input" id="humidity" name="humidity" placeholder="e.g. 80.3" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="ph" class="form-label">Soil pH</label>
+                                    <input type="number" step="any" min="0" max="14" class="form-control oc-input" id="ph" name="ph" placeholder="e.g. 6.5" required>
+                                </div>
+                                <div class="col-md-12">
+                                    <label for="rainfall" class="form-label">Rainfall (mm)</label>
+                                    <input type="number" step="any" min="0" class="form-control oc-input" id="rainfall" name="rainfall" placeholder="e.g. 200.5" required>
+                                </div>
+                            </div>
+
+                            <button type="submit" class="btn oc-btn-predict w-100 mt-4">
+                                <i class="fa-solid fa-magnifying-glass-chart me-2"></i>Predict Crop
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
